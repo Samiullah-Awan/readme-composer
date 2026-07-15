@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Profile README.md Composer</title>
+  <meta name="description" content="A premium split-screen GitHub Profile README visual builder with live GFM rendering, custom social badges, stats cards, and interactive tech stack selector.">
+  <link rel="stylesheet" href="./styles.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <div class="logo-icon">R</div>
+      <div class="logo-title">README.md Composer</div>
+    </div>
+    <div class="header-actions">
+      <select id="preset-selector" class="btn-preset" style="width: auto; padding-right: 2rem;">
+        <option value="" disabled selected>✨ Load Template Preset</option>
+        <option value="minimalist">Minimalist Developer</option>
+        <option value="fullstack">Full-Stack Engineer</option>
+        <option value="datascience">Data Scientist & Analyst</option>
+        <option value="creative">Creative Designer & Developer</option>
+      </select>
+      <button class="theme-toggle" id="theme-toggle-btn" aria-label="Toggle Theme">
+        🌙
+      </button>
+    </div>
+  </header>
+
+  <div class="app-container">
+    <!-- Sidebar: Form Controls -->
+    <aside class="sidebar">
+      <div class="sidebar-tabs">
+        <button class="tab-btn active" data-tab="tab-layout">
+          <span>🏠</span>
+          <span>Layout</span>
+        </button>
+        <button class="tab-btn" data-tab="tab-socials">
+          <span>🌐</span>
+          <span>Socials</span>
+        </button>
+        <button class="tab-btn" data-tab="tab-tech">
+          <span>🛠️</span>
+          <span>Techs</span>
+        </button>
+        <button class="tab-btn" data-tab="tab-stats">
+          <span>📊</span>
+          <span>Stats</span>
+        </button>
+        <button class="tab-btn" data-tab="tab-addons">
+          <span>🎁</span>
+          <span>Add-ons</span>
+        </button>
+      </div>
+
+      <!-- Tab: Layout & Header Info -->
+      <div class="sidebar-content active" id="tab-layout">
+        <div class="form-group">
+          <label>Profile Layout</label>
+          <div class="layout-selector">
+            <div class="selector-card active" data-layout="classic">
+              <div class="layout-preview-icon layout-classic">
+                <div class="col"></div>
+              </div>
+              Classic Left
+            </div>
+            <div class="selector-card" data-layout="centered">
+              <div class="layout-preview-icon layout-centered">
+                <div class="col"></div>
+              </div>
+              Centered
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="input-greeting">Greeting / Welcome</label>
+          <input type="text" id="input-greeting" placeholder="Hi there 👋, I'm" value="Hi there 👋, I'm">
+        </div>
+
+        <div class="form-group">
+          <label for="input-name">Name</label>
+          <input type="text" id="input-name" placeholder="Alex Morgan" value="Alex Morgan">
+        </div>
+
+        <div class="form-group">
+          <label for="input-title">Title / Role</label>
+          <input type="text" id="input-title" placeholder="Full Stack Software Engineer" value="Full Stack Software Engineer">
+        </div>
+
+        <div class="form-group">
+          <label for="input-subtitle">Subtitle / Motto</label>
+          <input type="text" id="input-subtitle" placeholder="Passionate about building scalable web apps and open source" value="Passionate about building scalable web apps and open-source.">
+        </div>
+
+        <div class="form-group">
+          <label for="input-banner">Banner Image URL <span class="optional">(Optional)</span></label>
+          <input type="url" id="input-banner" placeholder="https://raw.githubusercontent.com/.../banner.png">
+          <div class="form-info">Provide an image URL to show a gorgeous header banner.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="input-about">Short Bio / About Me</label>
+          <textarea id="input-about" rows="3" placeholder="Tell visitors about your goals or what you are currently working on...">🔭 I’m currently working on Next.js & Node.js projects
+🌱 I’m currently learning Kubernetes and Advanced DevOps
+💬 Ask me about React, Cloud Architecture, or Web Performance</textarea>
+        </div>
+      </div>
+
+      <!-- Tab: Social Badges -->
+      <div class="sidebar-content" id="tab-socials">
+        <div class="form-group">
+          <label for="select-badge-style">Social Badge Style</label>
+          <select id="select-badge-style">
+            <option value="for-the-badge" selected>For The Badge (Large)</option>
+            <option value="flat">Flat</option>
+            <option value="flat-square">Flat Square</option>
+            <option value="plastic">Plastic</option>
+            <option value="social">Social Icon</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="social-github">GitHub Username</label>
+          <input type="text" id="social-github" placeholder="alexmorgan" value="alexmorgan">
+        </div>
+
+        <div class="form-group">
+          <label for="social-linkedin">LinkedIn Profile URL</label>
+          <input type="url" id="social-linkedin" placeholder="https://linkedin.com/in/alexmorgan" value="https://linkedin.com/in/alexmorgan">
+        </div>
+
+        <div class="form-group">
+          <label for="social-twitter">Twitter / X Username</label>
+          <input type="text" id="social-twitter" placeholder="alex_codes">
+        </div>
+
+        <div class="form-group">
+          <label for="social-email">Contact Email</label>
+          <input type="email" id="social-email" placeholder="alex@example.com" value="alex@example.com">
+        </div>
+
+        <div class="form-group">
+          <label for="social-portfolio">Portfolio Website URL</label>
+          <input type="url" id="social-portfolio" placeholder="https://alexmorgan.dev">
+        </div>
+
+        <div class="form-group">
+          <label for="social-devto">Dev.to Username</label>
+          <input type="text" id="social-devto" placeholder="alexmorgan">
+        </div>
+
+        <div class="form-group">
+          <label for="social-medium">Medium Username</label>
+          <input type="text" id="social-medium" placeholder="@alexmorgan">
+        </div>
+
+        <div class="form-group">
+          <label for="social-youtube">YouTube Channel ID / Handle</label>
+          <input type="text" id="social-youtube" placeholder="@AlexCodes">
+        </div>
+      </div>
+
+      <!-- Tab: Tech Stack (Rendered via JS) -->
+      <div class="sidebar-content" id="tab-tech">
+        <div class="search-container">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="tech-search" placeholder="Search technologies (e.g. React, Docker)...">
+        </div>
+        <div id="tech-stack-container" class="flex-col gap-md">
+          <!-- Dynamic category boxes go here -->
+        </div>
+      </div>
+
+      <!-- Tab: GitHub Stats Cards -->
+      <div class="sidebar-content" id="tab-stats">
+        <div class="form-group">
+          <label for="select-stats-theme">Stats Card Theme</label>
+          <select id="select-stats-theme">
+            <option value="tokyonight" selected>Tokyo Night</option>
+            <option value="dracula">Dracula</option>
+            <option value="radical">Radical</option>
+            <option value="github_dark">GitHub Dark</option>
+            <option value="vision-friendly-dark">Vision Friendly Dark</option>
+            <option value="nord">Nord</option>
+            <option value="solarized-dark">Solarized Dark</option>
+            <option value="merko">Merko</option>
+            <option value="highcontrast">High Contrast</option>
+          </select>
+        </div>
+
+        <div class="form-group mt-sm">
+          <label class="checkbox-label">
+            <input type="checkbox" id="chk-show-stats" checked>
+            Show GitHub Stats Card
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" id="chk-show-langs" checked>
+            Show Top Languages Card
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" id="chk-show-streak" checked>
+            Show Contribution Streak Card
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" id="chk-show-trophies" checked>
+            Show Github Profile Trophies
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" id="chk-show-activity">
+            Show GitHub Activity Graph
+          </label>
+        </div>
+
+        <div class="form-group mt-md">
+          <label>Card Customizations</label>
+          <label class="checkbox-label">
+            <input type="checkbox" id="chk-stats-border" checked>
+            Show borders around cards
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" id="chk-stats-icons" checked>
+            Show icons inside cards
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" id="chk-stats-private" checked>
+            Include private commits in stats
+          </label>
+        </div>
+      </div>
+
+      <!-- Tab: Add-ons & Extra Widgets -->
+      <div class="sidebar-content" id="tab-addons">
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="chk-visitor-badge" checked>
+            Show Visitor / Profile Views Badge
+          </label>
+        </div>
+        <div class="form-group" id="visitor-badge-options">
+          <label for="select-visitor-style">Badge Style & Colors</label>
+          <div class="form-group-row">
+            <select id="select-visitor-style">
+              <option value="flat-square" selected>Flat Square</option>
+              <option value="for-the-badge">For the Badge</option>
+              <option value="plastic">Plastic</option>
+            </select>
+            <input type="text" id="visitor-badge-color" placeholder="Color hex/name" value="indigo">
+          </div>
+        </div>
+
+        <div class="form-group mt-md">
+          <label class="checkbox-label">
+            <input type="checkbox" id="chk-sponsorship">
+            Include Buy Me A Coffee Support Card
+          </label>
+        </div>
+        <div class="form-group" id="sponsorship-options" style="display: none;">
+          <label for="sponsor-username">Buy Me A Coffee Username</label>
+          <input type="text" id="sponsor-username" placeholder="alexmorgan" value="alexmorgan">
+        </div>
+
+        <div class="form-group mt-md">
+          <label class="checkbox-label">
+            <input type="checkbox" id="chk-dev-joke">
+            Include Dynamic Dev Joke Card
+          </label>
+          <div class="form-info">Shows a random coding joke in your profile, updating daily!</div>
+        </div>
+
+        <div class="form-group mt-sm">
+          <label class="checkbox-label">
+            <input type="checkbox" id="chk-readme-quotes">
+            Include Random Programming Quote Card
+          </label>
+          <div class="form-info">Refreshes with a new inspiring developer quote on reload.</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Panel: Split Screen Editor and Live Preview -->
+    <main class="output-area">
+      <div class="output-tabs">
+        <div class="panel-switchers">
+          <div class="panel-btn active" id="btn-split-view">Split Screen</div>
+          <div class="panel-btn" id="btn-preview-only">Preview Only</div>
+          <div class="panel-btn" id="btn-code-only">Markdown Source</div>
+        </div>
+        <div class="action-buttons">
+          <button class="btn-secondary" id="btn-copy-readme">
+            <span>📋</span> Copy Markdown
+          </button>
+          <button class="btn-primary" id="btn-download-readme">
+            <span>📥</span> Download README.md
+          </button>
+        </div>
+      </div>
+
+      <!-- Split/Tabs Container -->
+      <div class="panel-container" id="workspace-panels">
+        <!-- Editor Panel -->
+        <section class="panel" id="panel-editor">
+          <div class="panel-header-sub">
+            <span>📝 README.md Editor (Edit to customize raw output)</span>
+            <span style="font-size: 0.7rem; font-family: var(--font-mono);" id="editor-char-counter">0 chars</span>
+          </div>
+          <div class="editor-wrapper">
+            <textarea class="markdown-textarea" id="markdown-editor" spellcheck="false" placeholder="Generating markdown code..."></textarea>
+          </div>
+        </section>
+
+        <!-- Preview Panel -->
+        <section class="panel" id="panel-preview">
+          <div class="panel-header-sub">
+            <span>👀 Live GitHub Markdown Preview (Rendered)</span>
+            <span style="font-size: 0.7rem; font-family: var(--font-mono);">Real-time HTML</span>
+          </div>
+          <div class="preview-wrapper markdown-body" id="markdown-preview">
+            <!-- Rendered HTML will go here -->
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- Notification Toast -->
+  <div class="toast" id="clipboard-toast">
+    <span>✅</span> Copied README.md markdown to clipboard!
+  </div>
+
+  <!-- Script Modules -->
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
