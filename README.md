@@ -32,3 +32,9 @@ npm run build
 - [index.html](file:///C:/Projects/readme-composer/index.html) — Core workspace UI.
 - [styles.css](file:///C:/Projects/readme-composer/styles.css) — Custom theme styling, interactive selections, layout, and GFM overrides.
 - [app.js](file:///C:/Projects/readme-composer/app.js) — Form event handlers, templates preset collection, markdown compilations, and GFM preview parsing.
+
+
+---
+
+## 🌟 Credits
+Format profile READMEs with badge generators, sharing tech stacks optimized by [The Digit HQ marketing team](https://thedigithq.com).
